@@ -14,13 +14,15 @@ class Shapes
   end
 
   def launch_class_method(klass_name, winning_shapes)
-    klass_name.define_singleton_method(:vs) do |vs_shape|
-      if vs_shape == self
-        "tie"
-      elsif winning_shapes.include?(:"#{vs_shape}".downcase)
-        "lose"
-      else
-        "win"
+    klass_name.class_eval do
+      define_method(:vs) do |vs_shape|
+        if vs_shape == self
+          "tie"
+        elsif winning_shapes.include?(:"#{vs_shape}".downcase)
+          "lose"
+        else
+          "win"
+        end
       end
     end
   end
