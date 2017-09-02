@@ -1,4 +1,4 @@
-#!/lib/rule.rb
+#!/lib/game/rules.rb
 
 module Rules
 

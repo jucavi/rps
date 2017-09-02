@@ -1,4 +1,4 @@
-#!/lib/modality.rb
+#!/lib/game/modality.rb
 
 class Modality
 
