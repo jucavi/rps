@@ -9,6 +9,10 @@ module InitClasses
       @shapes = keys.zip(values).to_h
     end
 
+    def shapes
+      @shapes
+    end
+
     private
     def launch_class(klass_name)
       Object.const_set(klass_name.capitalize, Class.new)
